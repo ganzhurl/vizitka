@@ -13,6 +13,7 @@
             --bg-light: #FAFAFA;
             --text-dark: #222222;
             --text-light: #555555;
+            --whatsapp-green: #25D366;
         }
 
         * {
@@ -86,7 +87,6 @@
             line-height: 1.1;
         }
 
-        /* Стиль для курсива */
         .hero-subtitle {
             font-family: 'Georgia', serif;
             font-style: italic;
@@ -142,11 +142,19 @@
             background-color: #f0f0f0;
         }
 
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
         /* =========================================
            2. ВТОРОЙ БЛОК (Достижения)
            ========================================= */
         .badges-section {
-            margin-bottom: 50px; /* Отступ снизу до следующего блока */
+            margin-bottom: 50px;
         }
 
         .badges {
@@ -192,7 +200,7 @@
         }
 
         /* =========================================
-           3. БЛОК УСЛУГ (Бордовый фон) - ИСПРАВЛЕН
+           3. БЛОК УСЛУГ (Бордовый фон)
            ========================================= */
         .services-wrapper {
             background-color: var(--bordo);
@@ -213,11 +221,10 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: flex;
-            flex-direction: column; /* Выстраивает элементы друг под другом */
-            align-items: flex-start; /* Прижимает всё к левому краю */
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        /* Иконки теперь стоят отдельно над текстом */
         .service-icon {
             font-size: 2rem;
             margin-bottom: 15px;
@@ -307,6 +314,7 @@
         .pricing-info p {
             font-size: 0.95rem;
             color: #a8c1b9;
+            max-width: 600px;
         }
 
         .pricing-price {
@@ -359,6 +367,23 @@
         }
 
         /* =========================================
+           7. БЛОК СВЯЗИ (Внизу страницы)
+           ========================================= */
+        .contact-section {
+            background: white;
+            padding: 50px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-section .buttons {
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        /* =========================================
            АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ
            ========================================= */
         @media (max-width: 768px) {
@@ -401,7 +426,6 @@
         <!-- 1. Первый блок: Фото слева, текст справа -->
         <section class="hero">
             <div class="hero-image">
-                <!-- Если фото не появится, проверь его название (должно быть ava.jpg) -->
                 <img src="ava.jpg" alt="Любовь" onerror="this.src='https://placehold.co/400x400/0F3D3A/F5DABF?text=Ваше+фото'">
             </div>
             <div class="hero-content">
@@ -413,7 +437,11 @@
                 <div class="buttons">
                     <a href="https://t.me/ganzhl" target="_blank" class="btn btn-primary">Проверить участок</a>
                     <a href="https://t.me/ganzhl" target="_blank" class="btn btn-secondary">Подобрать участок</a>
-                    <a href="mailto:l.ganzhur@yandex.ru" class="btn btn-secondary">✉ Отправить заявку</a>
+                    
+                    <!-- Кнопки связи -->
+                    <a href="https://t.me/ganzhl" target="_blank" class="btn btn-secondary">✈ Telegram</a>
+                    <!-- Ссылка на WhatsApp по твоему нику -->
+                    <a href="https://wa.me/ganzhl" target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
                 </div>
             </div>
         </section>
@@ -439,7 +467,6 @@
         </section>
 
         <!-- 3. ЗАГОЛОВОК И БЛОК ИЗ 4 КАРТОЧЕК (Бордовый фон) -->
-        <!-- Заголовок "Что я проверяю" перенесен сюда -->
         <h2 class="section-title">Что я проверяю</h2>
         
         <section class="services-wrapper">
@@ -481,7 +508,8 @@
             <div class="pricing-item">
                 <div class="pricing-info">
                     <h3>Подбор участка</h3>
-                    <p>Анализ до 30 участков под задачу клиента</p>
+                    <!-- ОБНОВЛЕННЫЙ ТЕКСТ -->
+                    <p>Найду землю под вашу задачу — проанализирую до 30 участков и отберу 5 лучших с проверкой каждого.</p>
                 </div>
                 <div class="pricing-price">30 000 ₽ / клиент</div>
             </div>
@@ -506,6 +534,17 @@
             <div class="about-label">Обо мне</div>
             <div class="quote">«Помогаю подобрать земельный участок с учётом целей, пожеланий и бюджета клиента.»</div>
             <p class="about-text">Проверяю зону и ВРИ, ограничения и риски, готовлю заключение. Помогаю покупателям загородной недвижимости, которые хотят приобрести земельный участок для жизни, отдыха или инвестиций, но не обладают достаточными знаниями, чтобы самостоятельно оценить все нюансы.</p>
+        </section>
+
+        <!-- 7. БЛОК: Связаться со мной (В самом низу) -->
+        <section class="contact-section">
+            <h2 class="section-title" style="margin-bottom: 10px;">Связаться со мной</h2>
+            <p style="color: var(--text-light);">Выберите удобный способ связи, и я отвечу на ваши вопросы.</p>
+            <div class="buttons">
+                <a href="https://t.me/ganzhl" target="_blank" class="btn btn-primary">✈ Telegram</a>
+                <a href="https://wa.me/ganzhl" target="_blank" class="btn btn-whatsapp">💬 WhatsApp</a>
+                <a href="mailto:l.ganzhur@yandex.ru" class="btn btn-secondary">✉ Эл. почта</a>
+            </div>
         </section>
 
     </div>
